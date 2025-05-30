@@ -6,66 +6,187 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>股票投资 - 落地页</title>
     <style>
-        /* 页面基础样式 */
-        body {
-            font-family: Arial, sans-serif;
+        /* 全局样式 */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
             color: #333;
         }
 
-        /* 顶部区域 */
+        a {
+            text-decoration: none;
+        }
+
+        /* 顶部背景和布局 */
         .hero-section {
-            background-color: #007BFF;
+            background: linear-gradient(135deg, #007bff, #28a745);
             color: white;
+            padding: 120px 20px;
             text-align: center;
-            padding: 50px 20px;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-section h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero-section p {
             font-size: 1.2em;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.3s;
         }
 
-        /* 按钮样式 */
         .cta-button {
             background-color: #28a745;
             color: white;
-            padding: 15px 25px;
+            padding: 15px 30px;
             font-size: 1.2em;
-            border: none;
             border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.6s;
         }
 
         .cta-button:hover {
             background-color: #218838;
         }
 
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* 内容区域 */
         .content-section {
-            padding: 50px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
 
         .content-section h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 20px;
         }
 
         .content-section p {
-            font-size: 1.1em;
-            margin-bottom: 30px;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        /* 投资服务卡片 */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* 客户评价 */
+        .testimonials {
+            background-color: #f1f1f1;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card h4 {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 60px 20px;
+            background-color: #e9ecef;
+        }
+
+        .faq h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item h4 {
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .faq-item p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* 页脚 */
         .footer {
             background-color: #333;
             color: white;
@@ -76,16 +197,28 @@
         /* 响应式设计 */
         @media (max-width: 768px) {
             .hero-section h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             .cta-button {
-                padding: 12px 20px;
+                padding: 12px 25px;
                 font-size: 1em;
             }
 
-            .content-section h2 {
-                font-size: 1.5em;
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section p {
+                font-size: 1em;
+            }
+
+            .testimonials h2 {
+                font-size: 2em;
+            }
+
+            .faq h2 {
+                font-size: 2em;
             }
         }
     </style>
@@ -94,17 +227,59 @@
 
     <!-- 顶部区域 -->
     <div class="hero-section">
-        <h1>开始你的股票投资之旅</h1>
-        <p>投资股票，掌握财富未来。立即联系我们获取免费的投资咨询。</p>
-        <!-- WhatsApp 联系按钮 -->
+        <h1>股票投资，掌握财富未来</h1>
+        <p>与我们一起迈出成功投资的第一步，立即获取个性化的投资咨询！</p>
         <a href="https://wa.me/34612452668?text=你好，我对股票投资感兴趣，想了解更多信息。" class="cta-button">通过 WhatsApp 联系我</a>
     </div>
 
-    <!-- 内容区域 -->
+    <!-- 服务介绍 -->
     <div class="content-section">
-        <h2>为什么选择我们的股票投资方案？</h2>
-        <p>我们为投资者提供专业的股票分析、投资策略和实时行情，让你轻松决策、稳健投资。</p>
-        <p>无论你是刚入市的新手，还是有经验的投资者，我们的团队都能为你提供定制化的投资建议。</p>
+        <h2>我们的投资服务</h2>
+        <p>我们提供专业的股票投资分析、策略和风险控制，帮助你在市场中脱颖而出。</p>
+        <div class="services">
+            <div class="service-card">
+                <h3>股票分析</h3>
+                <p>为你提供深入的股票市场分析，帮助你抓住最佳投资机会。</p>
+            </div>
+            <div class="service-card">
+                <h3>实时行情</h3>
+                <p>我们提供实时的股票行情和趋势预测，确保你不会错过任何机会。</p>
+            </div>
+            <div class="service-card">
+                <h3>定制化策略</h3>
+                <p>根据你的投资目标，提供个性化的投资策略，最大化回报。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 客户评价 -->
+    <div class="testimonials">
+        <h2>客户评价</h2>
+        <div class="testimonial-card">
+            <p>"通过这个平台的投资服务，我在短短三个月内实现了15%的收益增长，非常专业！"</p>
+            <h4>张先生</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"他们的实时行情和个性化策略让我信心倍增，值得信赖的投资平台！"</p>
+            <h4>李女士</h4>
+        </div>
+    </div>
+
+    <!-- 常见问题 -->
+    <div class="faq">
+        <h2>常见问题</h2>
+        <div class="faq-item">
+            <h4>如何开始股票投资？</h4>
+            <p>你只需要联系我们，我们将根据你的风险偏好和投资目标定制个性化的投资计划。</p>
+        </div>
+        <div class="faq-item">
+            <h4>投资需要多少资金？</h4>
+            <p>我们支持多种投资规模，可以根据你的预算来调整策略。</p>
+        </div>
+        <div class="faq-item">
+            <h4>如何保证我的投资安全？</h4>
+            <p>我们采用严格的风险控制措施，确保你的投资安全。</p>
+        </div>
     </div>
 
     <!-- 页脚 -->
