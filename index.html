@@ -1,49 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My WhatsApp</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>股票投资 - 落地页</title>
     <style>
+        /* 页面基础样式 */
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
         }
-        .container {
+
+        /* 顶部区域 */
+        .hero-section {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* 按钮样式 */
+        .cta-button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
+        /* 内容区域 */
+        .content-section {
+            padding: 50px 20px;
             text-align: center;
         }
-        .container img {
-            width: 150px;
-            cursor: pointer;
+
+        .content-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
         }
-        .container a {
-            text-decoration: none;
-            color: #fff;
-            background-color: #25d366; /* WhatsApp Green */
-            padding: 15px 25px;
-            border-radius: 5px;
-            font-size: 18px;
-            display: inline-block;
-            margin-top: 20px;
+
+        .content-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2em;
+            }
+
+            .cta-button {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+
+            .content-section h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Click the image or the button below to contact me on WhatsApp!</h1>
-        
-        <!-- WhatsApp clickable image -->
-        <a href="https://wa.me/34612452668" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/WhatsApp.svg" alt="WhatsApp Image">
-        </a>
-        
-        <!-- Alternatively, you can use a button -->
-        <a href="https://wa.me/yourwhatsappphonenumber" target="_blank">Click here to Chat on WhatsApp</a>
+
+    <!-- 顶部区域 -->
+    <div class="hero-section">
+        <h1>开始你的股票投资之旅</h1>
+        <p>投资股票，掌握财富未来。立即联系我们获取免费的投资咨询。</p>
+        <!-- WhatsApp 联系按钮 -->
+        <a href="https://wa.me/34612452668?text=你好，我对股票投资感兴趣，想了解更多信息。" class="cta-button">通过 WhatsApp 联系我</a>
     </div>
+
+    <!-- 内容区域 -->
+    <div class="content-section">
+        <h2>为什么选择我们的股票投资方案？</h2>
+        <p>我们为投资者提供专业的股票分析、投资策略和实时行情，让你轻松决策、稳健投资。</p>
+        <p>无论你是刚入市的新手，还是有经验的投资者，我们的团队都能为你提供定制化的投资建议。</p>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p>&copy; 2025 股票投资平台 | 所有权利保留</p>
+    </div>
+
 </body>
 </html>
