@@ -54,12 +54,14 @@
         .cta-button, .cta-button-alt {
             background-color: #28a745;
             color: white;
-            padding: 25px 50px;
+            padding: 15px 30px;
             font-size: 1.5em;
             border-radius: 5px;
             transition: background-color 0.3s ease;
             animation: fadeInUp 1s ease-out 0.6s;
-            margin: 10px;
+            margin: 10px 0;
+            display: inline-block; /* Asegurarse de que los botones no se apilen */
+            width: auto; /* Deja que los botones ajusten su tamaño */
         }
 
         .cta-button:hover, .cta-button-alt:hover {
@@ -233,6 +235,8 @@
             .cta-button, .cta-button-alt {
                 padding: 15px 30px;
                 font-size: 1.2em;
+                width: 100%; /* Aseguramos que los botones ocupen todo el ancho en móviles */
+                box-sizing: border-box;
             }
 
             .services {
