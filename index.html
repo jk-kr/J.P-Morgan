@@ -89,7 +89,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 160px; /* Previene que el logo ocupe demasiado espacio */
         }
 
         .logo-text span {
@@ -787,72 +786,6 @@
             padding: 0 15px;
         }
 
-        /* Solución para el problema de superposición */
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        /* Ocultar texto en botón de WhatsApp en móviles */
-        .whatsapp-button .button-text {
-            display: inline;
-        }
-        
-        /* Ajustes para móviles pequeños */
-        @media (max-width: 400px) {
-            .logo-text {
-                max-width: 120px;
-                font-size: 1.2rem;
-            }
-            .whatsapp-button .button-text {
-                display: none;
-            }
-            .whatsapp-button {
-                width: 40px;
-                height: 40px;
-                padding: 0;
-                justify-content: center;
-                border-radius: 50%;
-            }
-            .whatsapp-button i {
-                margin-right: 0;
-                font-size: 1.3rem;
-            }
-            .mobile-menu-btn {
-                margin: 0 5px;
-            }
-        }
-        
-        /* Ajustes para móviles medianos */
-        @media (max-width: 480px) and (min-width: 401px) {
-            .whatsapp-button .button-text {
-                display: none;
-            }
-            .whatsapp-button {
-                width: 40px;
-                height: 40px;
-                padding: 0;
-                justify-content: center;
-                border-radius: 50%;
-            }
-            .whatsapp-button i {
-                margin-right: 0;
-                font-size: 1.3rem;
-            }
-        }
-        
-        /* Ajustes para móviles grandes */
-        @media (max-width: 767px) and (min-width: 481px) {
-            .whatsapp-button {
-                padding: 10px 12px;
-                font-size: 0.85rem;
-            }
-            .whatsapp-button .button-text {
-                display: inline;
-            }
-        }
-
         /* Tablet and Desktop Styles */
         @media (min-width: 768px) {
             header {
@@ -867,7 +800,6 @@
             
             .logo-text {
                 font-size: 1.6rem;
-                max-width: 100%;
             }
             
             nav {
@@ -1041,15 +973,13 @@
                 </ul>
             </nav>
             
-            <div class="header-right">
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <a href="https://wa.me/34612452668" class="cta-button whatsapp-button">
-                    <i class="fab fa-whatsapp"></i> <span class="button-text">Consultar</span>
-                </a>
-            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <a href="https://wa.me/34612452668" class="cta-button whatsapp-button">
+                <i class="fab fa-whatsapp"></i> <span class="button-text">Consultar</span>
+            </a>
         </div>
         
         <!-- Mobile Menu -->
