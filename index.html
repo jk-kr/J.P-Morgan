@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3JPKWT1K0P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3JPKWT1K0P');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JPKWT1K0P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3JPKWT1K0P');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morgan Group - Soluciones de inversión en acciones líderes a nivel mundial</title>
@@ -795,6 +795,166 @@
             padding: 0 15px;
         }
 
+        /* Stats Dashboard */
+        .stats-dashboard {
+            background: white;
+            padding: 70px 0;
+            display: none;
+        }
+
+        .dashboard-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat-box {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-box.whatsapp {
+            border-top: 5px solid #25D366;
+        }
+
+        .stat-box.pageviews {
+            border-top: 5px solid #0a1f44;
+        }
+
+        .stat-value {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #0a1f44;
+            margin: 20px 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-title {
+            font-size: 1.4rem;
+            color: #334155;
+            font-weight: 600;
+        }
+
+        .stat-description {
+            color: #64748b;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        .stat-details {
+            margin-top: 30px;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-details h3 {
+            font-size: 1.6rem;
+            color: #0a1f44;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .detail-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #0a1f44;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .detail-info {
+            text-align: left;
+        }
+
+        .detail-label {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .detail-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0a1f44;
+            margin-top: 5px;
+        }
+
+        .detail-location {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .toggle-dashboard {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0a1f44;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 2000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .toggle-dashboard:hover {
+            background: #1a3a6c;
+            transform: scale(1.1);
+        }
+
         /* Tablet and Desktop Styles */
         @media (min-width: 768px) {
             header {
@@ -1050,7 +1210,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             
-            <a href="https://chat.whatsapp.com/H4NXKPAdamg1IqgD5nyXVV" class="cta-button whatsapp-button">
+            <a href="https://chat.whatsapp.com/H4NXKPAdamg1IqgD5nyXVV" class="cta-button whatsapp-button" id="header-whatsapp">
                 <i class="fab fa-whatsapp"></i> <span class="button-text">Consultar</span>
             </a>
         </div>
@@ -1077,7 +1237,7 @@
                     <a href="#services" class="cta-button">
                         <i class="fas fa-chart-line"></i> Explorar servicios
                     </a>
-                    <a href="https://chat.whatsapp.com/H4NXKPAdamg1IqgD5nyXVV" class="cta-button whatsapp-button">
+                    <a href="https://chat.whatsapp.com/H4NXKPAdamg1IqgD5nyXVV" class="cta-button whatsapp-button" id="hero-whatsapp">
                         <i class="fab fa-whatsapp"></i> Reservar experto
                     </a>
                 </div>
@@ -1317,7 +1477,7 @@
                 <h2>Comience su <span>viaje de crecimiento patrimonial</span></h2>
                 <p>Ya sea un inversor individual o institucional, el equipo profesional de Morgan Group puede ofrecerle soluciones de inversión de clase mundial. Contáctenos hoy mismo por WhatsApp para programar una consulta personalizada.</p>
                 
-                <a href="https://chat.whatsapp.com/H4NXKPAdamg1IqgD5nyXVV" class="whatsapp-cta">
+                <a href="https://chat.whatsapp.com/H4NXKPAdamg1IqgD5nyXVV" class="whatsapp-cta" id="cta-whatsapp">
                     <i class="fab fa-whatsapp"></i> Reservar asesor por WhatsApp
                 </a>
             </div>
@@ -1376,7 +1536,7 @@
                             <div class="contact-icon">
                                 <i class="fab fa-whatsapp"></i>
                             </div>
-                            <div><a href="https://chat.whatsapp.com/H4NXKPAdamg1IqgD5nyXVV" style="color: #94a3b8;">Grupo de WhatsApp</a></div>
+                            <div><a href="https://chat.whatsapp.com/H4NXKPAdamg1IqgD5nyXVV" style="color: #94a3b8;" id="footer-whatsapp">Grupo de WhatsApp</a></div>
                         </div>
                     </div>
                 </div>
@@ -1397,6 +1557,80 @@
             </div>
         </div>
     </footer>
+
+    <!-- Stats Dashboard -->
+    <section class="stats-dashboard" id="stats-dashboard">
+        <div class="dashboard-container">
+            <div class="section-title">
+                <h2>Estadísticas de Tráfico</h2>
+                <p>Monitoreo en tiempo real de visitas y clics de WhatsApp</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-box pageviews">
+                    <div class="stat-title">Visitas Totales</div>
+                    <div class="stat-value" id="total-visits">0</div>
+                    <div class="stat-description">Número total de visitantes a la página</div>
+                </div>
+                
+                <div class="stat-box whatsapp">
+                    <div class="stat-title">Clics en WhatsApp</div>
+                    <div class="stat-value" id="whatsapp-clicks">0</div>
+                    <div class="stat-description">Total de clics en todos los botones de WhatsApp</div>
+                </div>
+            </div>
+            
+            <div class="stat-details">
+                <h3>Detalles de Clics</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="detail-info">
+                            <div class="detail-label">Botón en Cabecera</div>
+                            <div class="detail-value" id="header-clicks">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="detail-info">
+                            <div class="detail-label">Botón en Sección Hero</div>
+                            <div class="detail-value" id="hero-clicks">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="detail-info">
+                            <div class="detail-label">Botón en CTA Principal</div>
+                            <div class="detail-value" id="cta-clicks">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="detail-info">
+                            <div class="detail-label">Enlace en Pie de Página</div>
+                            <div class="detail-value" id="footer-clicks">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Toggle Button -->
+    <div class="toggle-dashboard" id="toggle-dashboard">
+        <i class="fas fa-chart-bar"></i>
+    </div>
 
     <script>
         // Mobile menu toggle
@@ -1441,7 +1675,15 @@
             document.querySelectorAll('a[href="https://chat.whatsapp.com/H4NXKPAdamg1IqgD5nyXVV"]').forEach(button => {
                 button.addEventListener('click', function(e) {
                     console.log('Botón de Grupo WhatsApp clickeado');
-                    // Aquí puedes añadir cualquier código de seguimiento
+                    
+                    // Enviar evento a Google Analytics
+                    gtag('event', 'click', {
+                        'event_category': 'WhatsApp',
+                        'event_label': this.id || 'WhatsApp Button'
+                    });
+                    
+                    // Incrementar contadores
+                    incrementWhatsAppClick(this.id);
                 });
             });
             
@@ -1467,7 +1709,75 @@
                     }, 300);
                 });
             }, 500);
+            
+            // Toggle dashboard visibility
+            document.getElementById('toggle-dashboard').addEventListener('click', function() {
+                const dashboard = document.getElementById('stats-dashboard');
+                if (dashboard.style.display === 'block') {
+                    dashboard.style.display = 'none';
+                } else {
+                    dashboard.style.display = 'block';
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }
+            });
+            
+            // Track page view
+            trackPageView();
         });
+        
+        // Page View Tracking
+        function trackPageView() {
+            // Incrementar contador de visitas
+            let visits = localStorage.getItem('pageVisits') || 0;
+            visits = parseInt(visits) + 1;
+            localStorage.setItem('pageVisits', visits);
+            
+            // Actualizar la UI
+            document.getElementById('total-visits').textContent = visits;
+            
+            // Enviar evento a Google Analytics
+            gtag('event', 'page_view', {
+                'page_title': document.title,
+                'page_location': window.location.href,
+                'page_path': window.location.pathname
+            });
+        }
+        
+        // WhatsApp Click Tracking
+        function incrementWhatsAppClick(buttonId) {
+            // Incrementar contador global de clics en WhatsApp
+            let totalClicks = localStorage.getItem('whatsappClicks') || 0;
+            totalClicks = parseInt(totalClicks) + 1;
+            localStorage.setItem('whatsappClicks', totalClicks);
+            
+            // Incrementar contador específico del botón
+            let buttonClicks = localStorage.getItem(buttonId + 'Clicks') || 0;
+            buttonClicks = parseInt(buttonClicks) + 1;
+            localStorage.setItem(buttonId + 'Clicks', buttonClicks);
+            
+            // Actualizar la UI
+            updateStatsUI();
+        }
+        
+        // Actualizar estadísticas en la UI
+        function updateStatsUI() {
+            const totalVisits = localStorage.getItem('pageVisits') || 0;
+            const totalClicks = localStorage.getItem('whatsappClicks') || 0;
+            const headerClicks = localStorage.getItem('header-whatsappClicks') || 0;
+            const heroClicks = localStorage.getItem('hero-whatsappClicks') || 0;
+            const ctaClicks = localStorage.getItem('cta-whatsappClicks') || 0;
+            const footerClicks = localStorage.getItem('footer-whatsappClicks') || 0;
+            
+            document.getElementById('total-visits').textContent = totalVisits;
+            document.getElementById('whatsapp-clicks').textContent = totalClicks;
+            document.getElementById('header-clicks').textContent = headerClicks;
+            document.getElementById('hero-clicks').textContent = heroClicks;
+            document.getElementById('cta-clicks').textContent = ctaClicks;
+            document.getElementById('footer-clicks').textContent = footerClicks;
+        }
+        
+        // Inicializar la UI con los datos actuales
+        updateStatsUI();
     </script>
 </body>
 </html>
